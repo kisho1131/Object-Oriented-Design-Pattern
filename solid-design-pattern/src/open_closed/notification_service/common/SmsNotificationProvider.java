@@ -1,8 +1,8 @@
 package open_closed.notification_service.common;
 
-public class SmsNotification {
+public class SmsNotificationProvider {
 
-  public void sendNotification(){
+  public void sendNotification(Notification notification){
     System.out.println("SMS Notification Sent :)) ");
   }
 }

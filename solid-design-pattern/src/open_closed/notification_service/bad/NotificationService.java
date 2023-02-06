@@ -1,19 +1,19 @@
 package open_closed.notification_service.bad;
 
-import open_closed.notification_service.common.EmailNotification;
+import open_closed.notification_service.common.EmailNotificationProvider;
 import open_closed.notification_service.common.Notification;
 import open_closed.notification_service.common.NotificationType;
-import open_closed.notification_service.common.SmsNotification;
+import open_closed.notification_service.common.SmsNotificationProvider;
 
 public class NotificationService {
-  private EmailNotification emailNotification;
-  private SmsNotification smsNotification;
+  private EmailNotificationProvider emailNotificationProvider;
+  private SmsNotificationProvider smsNotificationProvider;
 
   void sendNotification(final Notification notification) {
     if (notification.getMode() == NotificationType.SMS) {
-      smsNotification.sendNotification();
+      smsNotificationProvider.sendNotification(notification);
     } else if (notification.getMode() == NotificationType.EMAIL) {
-      emailNotification.sendNotification();
+      emailNotificationProvider.sendNotification(notification);
     }
   }
 }
